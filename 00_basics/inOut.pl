@@ -3,10 +3,12 @@ use strict;
 # Arithmetic operators
 print "Enter 1st number: \n";
 my $num1 = <STDIN>;
+# removes endline
 chomp($num1);
 
 print "Enter 2nd number: \n";
 my $num2 = <STDIN>;
+# removes endline
 chomp($num2);
 
 print "Number 1 = $num1\n";
