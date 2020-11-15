@@ -1,57 +1,26 @@
 use strict;
 
-my $string = "This is an example string for manipulation";
-print "\$string:\n---------> $string\n";
+# Simple array
+my @arr1 = (1,2,3);
+my @arr2 = qw/this is my array string/;
+my @arr3 = qw/2,3,4/;
+print "Array 1: @arr1\n";
+print "Array 2: @arr2\n";
+print "Array 3: @arr3\n";
 
-# index
-print "\n# Index\n";
-# index($text, $str, $offset)
-# Looks for $str in $text from position $offset from left2right
-my $search = "an";
-my $position = index($string, $search);
-print "Index value of \"$search\" on \$string : $position\n";
-my $search = "ann";
-my $position = index($string, $search);
-print "Index value of \"$search\" on \$string : $position\n";
+# Range arrays
+my $num1 = 1;
+my $num2 = 10;
+my @arrRange = ($num1..$num2);
+print "Array Range: @arrRange\n";
 
-# rindex
-print "\n# RIndex\n";
-# rindex($text, $str, $offset)
-# Looks for $str in $text from position $offset from right2left
-my $search = "an";
-my $position = rindex($string, $search);
-print "RIndex value of \"$search\" on \$string : $position\n";
-my $search = "ann";
-my $position = rindex($string, $search);
-print "RIndex value of \"$search\" on \$string : $position\n";
+# Get values from arrays
+print "My first value in \@arr1(@arr1) is $arr1[0]\n";
 
-# length
-print "\n# Length\n";
-my $len = length($string);
-print "\$string has a length of: $len\n";
-
-# position
-print "\n# Position\n";
-my $str = "mississipi";
-print "\$str: $str\n";
-# Look for char i globally on str
-while($str =~ /i/g)
-{
-  my $position = pos($str);
-  print "Position of $str : $position\n"
-}
-
-# substr
-# substr($string, $start, $length)
-# Copy $length chars from $string starting at $start
-my $copyStr = substr($string, 10, 8);
-print "substr(\$string, 10, 8): $copyStr\n";
-# if $length is not especified, copie suntil end
-my $copyStr = substr($string, 10);
-print "substr(\$string, 10): \t$copyStr\n";
-# Inverse assigment
-print "\n# Inverse assigmnet\n## Current \$string:\n$string\n";
-substr($string, 0, 4) = "here"; # replace this with here on $string
-substr($string, 0, 0) = "Welcome, "; # add welcome at beggining of $string
-print "## Modified modified:\n$string\n"
-
+# Size of array variable
+my $size = @arr1;
+print "size of array: $size\n";
+my $size = scalar @arr1;
+print "Size of array: $size\n";
+my $size = $#arr1;
+print "Last available index on array: $size\n";
